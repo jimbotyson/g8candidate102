@@ -8,13 +8,13 @@ DIGITS = list(range(48,58)) # range counts up to, but does not include the end v
 UPPERCASE = list(range(65,91))
 LOWERCASE = list(range(97,123))
 
-def generate_password():
+def generate_password(password_length=10):
     # create the list of characters to choose from
     ascii_list = DIGITS + UPPERCASE + LOWERCASE
     ascii_list_length = len(ascii_list)
     # Randomly select 10 character codes from ascii_list and store them in char_codes
     char_codes = []
-    for i in range(0,10):
+    for i in range(0,password_length):
         char_code = ascii_list[randint(0,ascii_list_length-1)] # randint does include end value
         char_codes.append(char_code)
     # map chr() function to list of character codes to convert them
