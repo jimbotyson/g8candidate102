@@ -18,6 +18,10 @@ Set `use_digits`, `use_upper`, `use_lower` to false to remove those characters.
 >>> generate_password(use_lower=False)
 'LQL4BQHZ2J'
 ```
-
+From the command line
+```
+$ python passgen.py -n 8 --nolower
+TEW2SOHP
+```
 ## Author
 [Tom Couch](mailto:t.couch@ucl.ac.uk)
