@@ -8,7 +8,12 @@ DIGITS = list(range(48,58)) # range counts up to, but does not include the end v
 UPPERCASE = list(range(65,91))
 LOWERCASE = list(range(97,123))
 
-def generate_password(password_length=10):
+def generate_password(password_length:int=10):
+    # validate the password_length
+    if not isinstance(password_length, int):
+        raise ValueError("password_length must be an integer value")
+    elif password_length < 1:
+        raise ValueError("password length cannot be less than 1")
     # create the list of characters to choose from
     ascii_list = DIGITS + UPPERCASE + LOWERCASE
     ascii_list_length = len(ascii_list)
