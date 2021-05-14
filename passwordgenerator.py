@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+from argparse import ArgumentParser
 from random import randint
+import sys
 
 # We're going to give each digit, uppercase character, and lowercase character
 # a unique number. ASCII codes already have this covered
@@ -39,4 +41,27 @@ def generate_password(password_length:int=10,
     return ''.join(password_characters)
 
 if __name__=='__main__':
-    print(generate_password())
+    parser = ArgumentParser(
+        description='Password generator',
+        usage='''python3 genpw.py [<args>]
+
+-n          Number of characters
+--nodigits Do not use digits
+--noupper  Do not use upper-case characters
+--nolower  Do not use lower-case characters
+''')
+    parser.add_argument('-n','--number',
+                        help='Number of characters')
+    parser.add_argument('--no_digits', action='store_true', default=False,
+                        help='Do not include digits')
+    parser.add_argument('--no_upper', action='store_true', default=False,
+                        help='Do not include uppercase')
+    parser.add_argument('--no_lower', action='store_true', default=False,
+                        help='Do not include lowercase')
+    args = parser.parse_args(sys.argv[1:])
+    kwargs = {}
+    if args.number: kwargs['password_length'] = int(args.number)
+    if args.no_digits: kwargs['use_digits'] = False
+    if args.no_upper: kwargs['use_upper'] = False
+    if args.no_lower: kwargs['use_lower'] = False
+    print(generate_password(**kwargs))
