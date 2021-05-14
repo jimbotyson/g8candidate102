@@ -52,16 +52,16 @@ if __name__=='__main__':
 ''')
     parser.add_argument('-n','--number',
                         help='Number of characters')
-    parser.add_argument('--no_digits', action='store_true', default=False,
+    parser.add_argument('--nodigits', action='store_true', default=False,
                         help='Do not include digits')
-    parser.add_argument('--no_upper', action='store_true', default=False,
+    parser.add_argument('--noupper', action='store_true', default=False,
                         help='Do not include uppercase')
-    parser.add_argument('--no_lower', action='store_true', default=False,
+    parser.add_argument('--nolower', action='store_true', default=False,
                         help='Do not include lowercase')
     args = parser.parse_args(sys.argv[1:])
     kwargs = {}
     if args.number: kwargs['password_length'] = int(args.number)
-    if args.no_digits: kwargs['use_digits'] = False
-    if args.no_upper: kwargs['use_upper'] = False
-    if args.no_lower: kwargs['use_lower'] = False
+    if args.nodigits: kwargs['use_digits'] = False
+    if args.noupper: kwargs['use_upper'] = False
+    if args.nolower: kwargs['use_lower'] = False
     print(generate_password(**kwargs))
