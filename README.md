@@ -4,7 +4,7 @@ A simple demonstration program in Python
 ## Usage
 By default generate_password generates a 10 character password containing a mix of uppercase, lowercase and digits.
 ```
->>> from passwordgenerator import generate_password
+>>> from passgen import generate_password
 >>> generate_password()
 '4it8p7eKcN'
 ```
