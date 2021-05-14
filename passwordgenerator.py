@@ -12,11 +12,14 @@ def generate_password(password_length:int=10,
                       use_digits=True,
                       use_upper=True,
                       use_lower=True):
-    # validate the password_length
+    # validate the inputs
     if not isinstance(password_length, int):
         raise ValueError("password_length must be an integer value")
     elif password_length < 1:
         raise ValueError("password length cannot be less than 1")
+    # don't allow all character types to be set to False
+    if not any([use_digits,use_upper,use_lower]):
+        raise ValueError("no characters available to choose from")
     # create the list of characters to choose from
     ascii_list = []
     if use_digits: ascii_list += DIGITS
