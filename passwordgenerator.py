@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from random import randint
 
 # We're going to give each digit, uppercase character, and lowercase character
@@ -36,3 +37,6 @@ def generate_password(password_length:int=10,
     password_characters = map(chr,char_codes)
     # convert the list to a string and return the result
     return ''.join(password_characters)
+
+if __name__=='__main__':
+    print(generate_password())
