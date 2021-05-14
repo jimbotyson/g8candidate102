@@ -17,7 +17,8 @@ def generate_password(password_length:int=10):
     # create the list of characters to choose from
     ascii_list = DIGITS + UPPERCASE + LOWERCASE
     ascii_list_length = len(ascii_list)
-    # Randomly select 10 character codes from ascii_list and store them in char_codes
+    # Randomly select character codes from ascii_list and store them in char_codes
+    # Do this 'password_length' times
     char_codes = []
     for i in range(0,password_length):
         char_code = ascii_list[randint(0,ascii_list_length-1)] # randint does include end value
