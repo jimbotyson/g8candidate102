@@ -4,6 +4,8 @@ from random import sample
 from string import digits as ascii_digits, ascii_uppercase, ascii_lowercase
 import sys
 
+__version__="1.0"
+
 def generate_password(password_length:int=10,
                       digits=True,
                       uppercase=True,

@@ -36,5 +36,9 @@ optional arguments:
 $ python passgen.py -n 8 --nolower
 TEW2SOHP
 ```
+
+## Version
+1.0
+
 ## Author
 [Tom Couch](mailto:t.couch@ucl.ac.uk)
